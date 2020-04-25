@@ -1,0 +1,56 @@
+/* 
+ * Icons
+ */
+
+$icon-font-url:				'../fonts/icon/vv-icons';
+$icon-font-name:			'vv-icons';
+$font-family-icon:			$icon-font-name !important;
+
+// Icon font face definition
+// @include font-face(
+// 	$icon-font-name,
+// 	$icon-font-url,
+// 	("ttf", "svg", "woff", "eot")
+// );
+
+[data-icon]:before {
+    font-family: $font-family-icon;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none !important;
+    speak: none;
+}
+.icon:before,
+[class*="icon"]:before,
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+    font-family: $font-family-icon;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: none !important;
+    speak: none;
+}
+
+[class*="icon"]:hover, *:hover [class*="icon"] {
+    text-decoration: none;
+}
+
+a > [class*="icon"] {
+  margin-right: .6rem;
+}
+
+// Example
+// .icon-check:before {
+//     content: "\e903";
+// }

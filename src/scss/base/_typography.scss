@@ -2,6 +2,36 @@
  * Typography
  */
 
+// Font Names
+$base-font-regular-name:	'Klima';
+$base-font-serif-name:		'Livvic';
+
+$font-family-sans-serif:	$base-font-regular-name, Helvetica, Arial, sans-serif;
+$font-family-serif:			$base-font-serif-name, 'Times New Roman', Georgia, serif;
+
+$font-family-base: 			$font-family-sans-serif;
+$font-family-secondary:		$font-family-serif;
+
+$theme-fs-unit:				16px !default;
+
+$theme-fs-xxs:			 	11px !default; 
+$theme-fs-xs:			 	ceil(($theme-fs-unit * .80)) !default; 
+$theme-fs-sm:			 	ceil(($theme-fs-unit * .875)) !default; 
+$theme-fs-bs:				ceil(($theme-fs-unit * 1)) !default;
+$theme-fs-bsl:				ceil(($theme-fs-unit * 1.125)) !default;
+$theme-fs-md:			 	ceil(($theme-fs-unit * 1.50)) !default; 
+$theme-fs-lg:			 	ceil(($theme-fs-unit * 1.70)) !default; 
+$theme-fs-xl:			 	ceil(($theme-fs-unit * 2.25)) !default; 
+$theme-fs-xxl:			 	ceil(($theme-fs-unit * 3.4)) !default; 
+$theme-fs-xxxl:			 	ceil(($theme-fs-unit * 4.25)) !default; 
+$theme-fs-5x:			 	ceil(($theme-fs-unit * 5)) !default; 
+$theme-fs-6x:			 	ceil(($theme-fs-unit * 6)) !default; 
+
+$theme-line-height-base:	1.428571429 !default;
+$theme-line-height-large:   1.8 !default; // extra decimals for Win 8.1 Chrome
+$theme-line-height-small:   1.2 !default;
+$theme-line-height-min:     1;
+
 body {
     font-family: sans-serif;
 }
