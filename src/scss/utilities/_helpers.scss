@@ -1,4 +1,8 @@
-// Spacers
+// =============================================================================
+// Helpers
+// =============================================================================
+
+// Variables
 $spacer-none:  0;
 $spacer-xs:    4px;
 $spacer-sm:    8px;
@@ -19,16 +23,15 @@ $spacer-size-list: (
     none:   0
 );
 
+// Spacer Sides
 $spacer-sides: top right bottom left;
 $box-boundary-list: (
     in: padding,
     out: margin
 );
 
-// ----------------------------------------------
-// Spacers
-// ----------------------------------------------
 // Usage:
+//  
 // Always apply spacers either for DIV or SPAN tags.
 // For padding use "in", and for margins use "out" as the naming convention for the CSS selectors.
 // FOr Sizes: "sm", "base", "md", "lg" and "none"

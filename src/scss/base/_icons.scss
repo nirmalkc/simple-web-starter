@@ -1,17 +1,17 @@
-/* 
- * Icons
- */
+// =============================================================================
+// Icons
+// =============================================================================
 
-$icon-font-url:				'../fonts/icon/vv-icons';
-$icon-font-name:			'vv-icons';
-$font-family-icon:			$icon-font-name !important;
+$icon-font-url:         '../fonts/icon/theme-icons';
+$icon-font-name:        'theme-icons';
+$font-family-icon:      $icon-font-name !important;
 
 // Icon font face definition
-// @include font-face(
-// 	$icon-font-name,
-// 	$icon-font-url,
-// 	("ttf", "svg", "woff", "eot")
-// );
+@include font-face(
+	$icon-font-name,
+	$icon-font-url,
+	("ttf", "svg", "woff", "eot")
+);
 
 [data-icon]:before {
     font-family: $font-family-icon;
