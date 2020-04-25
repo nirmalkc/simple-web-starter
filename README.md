@@ -9,7 +9,7 @@ A simple light weight package for compiling Sass(scss files) and running a dev s
 
 ### Clone this Repo
 ```
-git clone https://github.com/Jatin-8898/sass-starter-pack.git
+git clone https://github.com/nirmalkc/simplewebstarter.git
 ```
 
 ### Installation
