@@ -1,4 +1,4 @@
-# Simple Web Starter (simplewebstarter) ♦️
+# Simple Web Starter (simplewebstarter)
 
 A simple light weight package for compiling Sass(scss files) and running a dev server with a simple HTML file.
 
@@ -14,7 +14,7 @@ git clone https://github.com/nirmalkc/simplewebstarter.git
 
 Get started quickly by cloning this repository.
 
-Install the dependencies (gulp, gulp-sass, browser-sync)
+Install the dependencies (gulp, gulp-sass, gulp-autoprefixer, gulp-sourcemaps, gulp-rename, browser-sync)
 
 ```sh
 $ npm install
