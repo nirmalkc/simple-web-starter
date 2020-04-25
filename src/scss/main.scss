@@ -5,13 +5,21 @@
 
 // Base
 @import 'base/variables';
+@import 'base/colors';
+@import 'base/typography';
 
 // Utilities
 @import 'utilities/mixins';
+@import 'utilities/animation';
+@import 'utilities/helpers';
 
 // Components
+@import 'components/button';
 
 // Layout
+@import 'layout/header';
+@import 'layout/footer';
 @import 'layout/navigation';
 
 // Pages
+@import 'pages/home'
