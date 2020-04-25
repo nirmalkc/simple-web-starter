@@ -5,8 +5,6 @@ A simple light weight package for compiling Sass(scss files) and running a dev s
 ### Version
 1.0.0
 
-## 📝 Usage
-
 ### Clone this Repo
 ```
 git clone https://github.com/nirmalkc/simplewebstarter.git
