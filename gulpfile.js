@@ -10,7 +10,7 @@ const browserReload = browserSync.reload;
 
 // Task to compile scss to CSS and copy to the dist folder
 function scssTask(){    
-    return gulp.src('src/scss/style.scss')       
+    return gulp.src('src/scss/main.scss')       
         .pipe(sourcemaps.init())
         .pipe(sass({ 
             errLogToConsole: true
@@ -44,3 +44,4 @@ function watch(){
 exports.watch = watch;
 
 gulp.task("default", watch);
+gulp.task("build", scssTask, htmlTask, watch);
