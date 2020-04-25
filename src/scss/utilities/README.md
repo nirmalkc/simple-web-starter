@@ -19,40 +19,39 @@ For Sizes: "sm", "base", "md", "lg" and "none"
 
 
 Example for Padding - all sides:
-```sh
-<div class="spacer-in-sm"></div> # Small
-<div class="spacer-in-base"></div> # Normal
-<div class="spacer-in-md"></div> # Medium
-<div class="spacer-in-lg"></div> # Large
-<div class="spacer-in-none"></div> # No padding
+```html
+<div class="spacer-in-sm"></div> <!-- Small -->
+<div class="spacer-in-base"></div> <!-- Normal -->
+<div class="spacer-in-md"></div> <!-- Medium -->
+<div class="spacer-in-lg"></div> <!-- Large -->
+<div class="spacer-in-none"></div> <!-- No padding -->
 ```
 
 Margin - all sides (Does not work with <span> tags):
-```sh
-<div class="spacer-out-sm"></div> - Small
-<div class="spacer-out-base"></div> - Normal
-<div class="spacer-out-md"></div> - Medium
-<div class="spacer-out-lg"></div> - Large
-<div class="spacer-out-none"></div> - No margin
+```html
+<div class="spacer-out-sm"></div> <!-- Small -->
+<div class="spacer-out-base"></div> <!-- Normal -->
+<div class="spacer-out-md"></div> <!-- Medium -->
+<div class="spacer-out-lg"></div> <!-- Large -->
+<div class="spacer-out-none"></div> <!-- No margin -->
 ```
 Vertical Padding:
-```sh
-<div class="spacer-in-v-sm"></div> - Small
-<div class="spacer-in-v-base"></div> - Normal
-<div class="spacer-in-v-md"></div> - Medium
-<div class="spacer-in-v-lg"></div> - Large
-<div class="spacer-in-v-none"></div> - No padding for top and bottom
+```html
+<div class="spacer-in-v-sm"></div> <!-- Small -->
+<div class="spacer-in-v-base"></div> <!-- Normal -->
+<div class="spacer-in-v-md"></div> <!-- Medium -->
+<div class="spacer-in-v-lg"></div> <!-- Large -->
+<div class="spacer-in-v-none"></div> <!-- No padding for top and bottom -->
 ```
 Horizontal Margin:
-```sh
-<div class="spacer-out-h-sm"></div> - Small
-<div class="spacer-out-h-base"></div> - Normal
-<div class="spacer-out-h-md"></div> - Medium
-<div class="spacer-out-h-lg"></div> - Large
-<div class="spacer-out-h-none"></div> - No margin for left and right side
+```html
+<div class="spacer-out-h-sm"></div> <!-- Small -->
+<div class="spacer-out-h-base"></div> <!-- Normal -->
+<div class="spacer-out-h-md"></div> <!-- Medium -->
+<div class="spacer-out-h-lg"></div> <!-- Large -->
+<div class="spacer-out-h-none"></div> <!-- No margin for left and right side -->
 ```
 Margin or padding for specific side:
-```sh
-<div class="spacer-out-top-sm"></div> - Small margin at the top
-<div class="spacer-in-bottom-lg"></div> - Large padding at the bottom
-```
+```html
+<div class="spacer-out-top-sm"></div> <!-- Small margin at the top -->
+<div 
