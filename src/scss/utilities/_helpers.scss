@@ -2,7 +2,7 @@
 $spacer-none:  0;
 $spacer-xs:    4px;
 $spacer-sm:    8px;
-$spacer-base:  16px;
+$spacer-nm:  16px;
 $spacer-md:    24px;
 $spacer-lg:    32px;
 $spacer-xl:    48px;
@@ -11,7 +11,7 @@ $spacer-xxl:   64px;
 $spacer-size-list: (
     xs:     $spacer-xs,
     sm:     $spacer-sm,
-    base:   $spacer-base,
+    nm:     $spacer-nm,
     md:     $spacer-md,
     lg:     $spacer-lg,
     xl:     $spacer-xl,
