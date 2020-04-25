@@ -1,2 +1,17 @@
-@import 'layout.scss';
+/*
+ *  Main SCSS File for Simple Web Starter Pack
+ */
 
+
+// Base
+@import 'base/variables';
+
+// Utilities
+@import 'utilities/mixins';
+
+// Components
+
+// Layout
+@import 'layout/navigation';
+
+// Pages
