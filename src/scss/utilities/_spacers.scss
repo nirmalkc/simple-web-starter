@@ -6,7 +6,7 @@
 $spacer-none:  0;
 $spacer-xs:    4px;
 $spacer-sm:    8px;
-$spacer-base:  16px;
+$spacer-rg:    16px;
 $spacer-md:    24px;
 $spacer-lg:    32px;
 $spacer-xl:    48px;
@@ -19,7 +19,7 @@ $spacer-5xl:   160px;
 $spacer-size-list: (
     xs:     $spacer-xs,
     sm:     $spacer-sm,
-    rg:     $spacer-base,
+    rg:     $spacer-rg,
     md:     $spacer-md,
     lg:     $spacer-lg,
     xl:     $spacer-xl,
@@ -29,6 +29,10 @@ $spacer-size-list: (
     5xl:    $spacer-5xl,
     none:   0
 );
+
+.aaa {
+    margin-top: map-get($spacer-size-list, "xl");
+}
 
 // Spacer Sides
 $spacer-sides: top right bottom left;

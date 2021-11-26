@@ -1,0 +1,96 @@
+// =============================================================================
+// Helpers
+// =============================================================================
+.full-width {
+    width:100%;
+}
+
+// Position
+
+
+// Heights
+.height-auto {
+    height: auto;
+}
+
+// Fixed heights
+.height-xs {
+    height: 100px;
+    overflow-y: auto;
+}
+
+.height-sm {
+    height: 200px;
+    overflow-y: auto;
+}
+
+.height-md {
+    height: 320px;
+    overflow-y: auto;
+}
+
+// Whitespace
+.nowrap {
+    white-space: nowrap !important;
+}
+
+
+
+
+// Section Spacers
+
+
+// HR Color
+hr {
+    background-color: $color-grey;
+}
+
+// HR Spacers
+[class^="hr-"] {
+    &.hr-spacer {
+        &-xs {
+            margin: $spacer-xs 0;
+        }
+
+        &-sm {
+            margin: $spacer-sm 0;
+        }
+
+        &-lg {
+            margin: $spacer-lg 0;
+        }
+
+        &-xl {
+            margin: $spacer-xl 0;
+        }
+
+        &-2xl {
+            margin: $spacer-2xl 0;
+        }
+
+        &-none {
+            margin: 0;
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+// Variables
+$spacer-none:  0;
+$spacer-xs:    4px;
+$spacer-sm:    8px;
+$spacer-base:  16px;
+$spacer-md:    24px;
+$spacer-lg:    32px;
+$spacer-xl:    48px;
+$spacer-2xl:   64px;
+$spacer-3xl:   80px;
+$spacer-4xl:   112x;
+$spacer-5xl:   160px;
+
+
