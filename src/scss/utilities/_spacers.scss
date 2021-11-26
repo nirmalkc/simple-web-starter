@@ -1,0 +1,118 @@
+// =============================================================================
+// Helpers
+// =============================================================================
+
+// Variables
+$spacer-none:  0;
+$spacer-xs:    4px;
+$spacer-sm:    8px;
+$spacer-base:  16px;
+$spacer-md:    24px;
+$spacer-lg:    32px;
+$spacer-xl:    48px;
+$spacer-2xl:   64px;
+$spacer-3xl:   80px;
+$spacer-4xl:   112x;
+$spacer-5xl:   160px;
+
+
+$spacer-size-list: (
+    xs:     $spacer-xs,
+    sm:     $spacer-sm,
+    rg:     $spacer-base,
+    md:     $spacer-md,
+    lg:     $spacer-lg,
+    xl:     $spacer-xl,
+    2xl:    $spacer-2xl,
+    3xl:    $spacer-3xl,
+    4xl:    $spacer-4xl,
+    5xl:    $spacer-5xl,
+    none:   0
+);
+
+// Spacer Sides
+$spacer-sides: top right bottom left;
+$box-boundary-list: (
+    p: padding,
+    m: margin
+);
+
+// Usage:
+//  
+// Always apply spacers either for DIV or SPAN tags.
+// For padding use "in", and for margins use "out" as the naming convention for the CSS selectors.
+// FOr Sizes: "sm", "base", "md", "lg" and "none"
+//
+// Padding - all sides
+// <div class="p-sm"></div> - Small
+// <div class="p-rg"></div> - Regular
+// <div class="p-md"></div> - Medium
+// <div class="p-lg"></div> - Large
+// <div class="p-none"></div> - No padding
+//
+// Margin - all sides
+// Does not work with <span> tags.
+// <div class="m-sm"></div> - Small
+// <div class="m-rg"></div> - Regular
+// <div class="m-md"></div> - Medium
+// <div class="m-lg"></div> - Large
+// <div class="m-none"></div> - No margin
+//
+// Vertical Padding
+// <div class="p-y-sm"></div> - Small
+// <div class="p-y-rg"></div> - Regular
+// <div class="p-y-md"></div> - Medium
+// <div class="p-y-lg"></div> - Large
+// <div class="p-y-none"></div> - No padding for top and bottom
+//
+// Horizontal Margin
+// <div class="m-x-sm"></div> - Small
+// <div class="m-x-rg"></div> - Regular
+// <div class="m-x-md"></div> - Medium
+// <div class="m-x-lg"></div> - Large
+// <div class="m-x-none"></div> - No margin for left and right side
+//
+// Applying margin or padding for specific side
+// <div class="m-t-sm"></div> - Small margin at the top
+// <div class="p-b-lg"></div> - Large padding at the bottom
+
+@each $boundary, $boundary-property in $box-boundary-list {
+    .#{$boundary} {
+        @each $current-size, $current-size-value in $spacer-size-list {
+            @each $side in $spacer-sides {
+                @if ($side == top) { 
+                    &-t-#{$current-size} {
+                        #{$boundary-property}-#{$side}: $current-size-value !important;
+                    };
+                }
+                @else if ($side == right) { 
+                    &-r-#{$current-size} {
+                        #{$boundary-property}-#{$side}: $current-size-value !important;
+                    };
+                }
+                @else if ($side == bottom) { 
+                    &-b-#{$current-size} {
+                        #{$boundary-property}-#{$side}: $current-size-value !important;
+                    };
+                }
+                @else if ($side == left) { 
+                    &-l-#{$current-size} {
+                        #{$boundary-property}-#{$side}: $current-size-value !important;
+                    };
+                }
+            }
+            &-#{$current-size} {
+                #{$boundary-property}: $current-size-value;
+            }
+            &-y-#{$current-size} {
+                #{$boundary-property}-top: $current-size-value;
+                #{$boundary-property}-bottom: $current-size-value;
+            }
+            &-x-#{$current-size} {
+                #{$boundary-property}-left: $current-size-value;
+                #{$boundary-property}-right: $current-size-value;
+            }
+        }
+    }
+}
+
