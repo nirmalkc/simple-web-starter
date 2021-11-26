@@ -46,3 +46,223 @@
 		src: $src;
 	}
 }
+
+// Clearfix
+// Thanks to Nicolas Gallagher (http://nicolasgallagher.com/micro-clearfix-hack)
+//
+// Example:
+// @extend %clearfix;
+%clearfix {
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+// Border Radius
+//
+// Single side border-radius
+// Example:
+// @include border-top-radius(24px);
+@mixin border-top-radius($radius) {
+	-webkit-border-top-right-radius: $radius;
+	border-top-right-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+	border-top-left-radius: $radius;
+	background-clip: padding-box;
+  }
+  @mixin border-right-radius($radius) {
+	-webkit-border-bottom-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+	-webkit-border-top-right-radius: $radius;
+	border-top-right-radius: $radius;
+	background-clip: padding-box;
+  }
+  @mixin border-bottom-radius($radius) {
+	-webkit-border-bottom-right-radius: $radius;
+	border-bottom-right-radius: $radius;
+	-webkit-border-bottom-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	background-clip: padding-box;
+  }
+  @mixin border-left-radius($radius) {
+	-webkit-border-bottom-left-radius: $radius;
+	border-bottom-left-radius: $radius;
+	-webkit-border-top-left-radius: $radius;
+	border-top-left-radius: $radius;
+	background-clip: padding-box;
+  }
+
+
+// Text Utilities
+//
+// Placeholder text color
+// Example:
+// @include placeholdertext-color('.text-input', grey);
+@mixin placeholdertext-color($element,$color) {
+	#{$element}::-webkit-input-placeholder {
+	  color: $color;
+	}
+  
+	#{$element}:-moz-placeholder { /* Firefox 18- */
+	  color: $color;
+	}
+  
+	#{$element}::-moz-placeholder {  /* Firefox 19+ */
+	  color: $color;
+	}
+  
+	#{$element}:-ms-input-placeholder {
+	  color: $color;
+	}
+}
+  
+// Text Truncation
+@mixin text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Box Shadow
+@mixin box-shadow($a, $b, $c, $d, $color) {
+	-moz-box-shadow: $a $b $c $d $color;
+	-webkit-box-shadow: $a $b $c $d $color;
+	box-shadow: $a $b $c $d $color;
+}
+
+// Text Shadow
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+	text-shadow: $x $y $blur $color;
+}
+
+// Circle
+@mixin draw-circle($radius, $color) {
+	@include border-radius($radius/2+px);
+	background-color: $color;
+	height:$radius+px;
+	width:$radius+px;
+	-moz-background-clip: padding;     /* Firefox 3.6 */
+	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+	background-clip: padding-box;
+}
+
+// Absolute positioning
+@mixin abs-pos ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+	position: absolute;
+}
+  
+// Centering mixin
+@mixin content-centerer($horizontal: true, $vertical: true) {
+	position: absolute;
+	@if ($horizontal and $vertical) {
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	} @else if ($horizontal) {
+	  left: 50%;
+	  transform: translate(-50%, 0);
+	} @else if ($vertical) {
+	  top: 50%;
+	  transform: translate(0, -50);
+	}
+}
+
+
+// Visually hiding an element without using display:none.
+//
+// USAGE:
+//  .visually-hidden {
+//      @extend %visuallyhidden;
+//  }
+
+%visuallyhidden {
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Grayscale
+@mixin grayscale($value) {
+    -webkit-filter: #{"grayscale(#{$value})"};
+    -moz-filter: #{"grayscale(#{$value})"};
+    filter:#{"grayscale(#{$value})"};
+}
+
+
+// Project Specific Mixins
+// 
+// Shadow
+@mixin shadow-default() {
+  @include box-shadow(1px, 2px, 3px, 0, rgba(0, 0, 0, .2));
+}
+
+@mixin shadow-none() {
+  @include box-shadow(0, 0, 0, 0, rgba(0, 0, 0, 0));
+}
+
+@mixin shadow-thin() {
+  @include box-shadow(0, 1px, 1px, 0, rgba(0, 0, 0, .2));
+}
+
+@mixin text-shadow-none {
+  @include text-shadow(0, 0, 0);
+}
+
+@mixin text-shadow-default {
+  @include text-shadow(3px, 3px, 2px, rgba(0, 0, 0, .4));
+}
+
+// Transitions
+@mixin simple-transition() {
+  transition: all .16s ease-in-out;
+}
+
+
+@mixin slow-transition() {
+  transition: all 0.3s ease-in-out;
+}
+
+// Text Link
+@mixin text-link($nsc, $hsc) {
+  color: $nsc;
+  @include simple-transition;
+  &:hover {
+    color: $hsc;
+    @include simple-transition;
+    text-decoration: none !important;
+  }
+}
+
+// String Replace
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
