@@ -1,4 +1,3 @@
-
 const gulp = require('gulp');
 const sass = require('gulp-sass'); 
 const autoprefixer = require('gulp-autoprefixer');
@@ -29,8 +28,37 @@ function htmlTask(){
         .pipe(gulp.dest('dist/')); 
 }
 
+// Task to copy the JS files to the dist folder as it is
+function jsTask(){    
+    return gulp.src('src/js/*.js')       
+        .pipe(gulp.dest('dist/js/')); 
+}
+
+// Task to copy the Intial Bootstrap JS files and its dependancy to the dist folder
+function bootstrapTask(){    
+    return gulp.src('node_modules/bootstrap/dist/js/bootstrap.min.js')       
+        .pipe(gulp.dest('src/js/')); 
+}
+
 // Look for the changes
-function watch(){
+// function watch(){
+    
+//     browserSync.init({
+//         server: {
+//             baseDir: './dist/'
+//         }
+//     });
+//     gulp.watch( 'src/scss/', scssTask);
+//     gulp.watch( 'src/*.html', htmlTask);
+//     gulp.watch('src/js/*.js', jsTask);
+//     gulp.watch('src/*.html').on('change', browserReload);
+// }
+
+// exports.watch = watch;
+
+
+// gulp.task("default", watch);
+gulp.task('default', gulp.series(scssTask, htmlTask, jsTask, function() {
     browserSync.init({
         server: {
             baseDir: './dist/'
@@ -38,10 +66,10 @@ function watch(){
     });
     gulp.watch( 'src/scss/', scssTask);
     gulp.watch( 'src/*.html', htmlTask);
+    gulp.watch('src/js/*.js', jsTask);
     gulp.watch('src/*.html').on('change', browserReload);
-}
+}));
 
-exports.watch = watch;
 
-gulp.task("default", watch);
-gulp.task("build", scssTask, htmlTask, watch);
+
+
